@@ -27,8 +27,14 @@ header {
     justify-content: space-around;
 }
 .back {
+    padding: 3px 10px 3px 10px;
+
     text-decoration: none;
     color: black;
+}
+#back:hover {
+    border-radius: 20px;
+    background-color: #e09f9a9d;
 }
 #text {
     text-align: center;
