@@ -22,10 +22,16 @@ Installation process:
         npm install
         npm i sequelize-cli
         npx sequelize-cli db:create
-        node server.js 
+Dans app.js =>
+        /* Décommenter uniquement pour la création des tables MySQL si elles n'existent pas */
+// sequelize.sync({ force: false });
+// sequelize.sync({ alter: true }
+
+Installer nodemon = lancer le server avec npm run start
+       ou node server.js 
         
 
-    - Ouvrir un navigateur: http://localhost:8081
+    - Ouvrir un navigateur: http://localhost:8081 (OU 8080)
         
 Description du projet:
 
