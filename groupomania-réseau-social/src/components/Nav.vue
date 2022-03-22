@@ -80,7 +80,16 @@ i {
 @media screen and (max-width: 992px) {
     #nav {
         text-align: center;
+        flex-wrap: wrap;
     }
+    .link {
+    text-align: center;
+    margin: 0 5px 0 5px;
+    border-radius: 10px;
+    padding: 0 0.9em 0 0.9em;
+    font-size: 15px;
+
+}
 
     #options, #routes {
         justify-content: space-between;

@@ -145,7 +145,7 @@ export default {
     margin-top: 2rem;
     padding: 3rem;
     border-radius: 4px;
-    max-width: 500px;
+    max-width: 350px;
 }
 .header {
     display: flex;
