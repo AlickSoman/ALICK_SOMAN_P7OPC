@@ -1,0 +1,29 @@
+{
+  "development": {
+    "username": "groupomania_db",
+    "password": "DBgroupo321",
+    "database": "groupomania",
+    "host": "localhost",
+    "port":8889,
+    "dialect": "mysql",
+    "logging": false
+  },
+  "test": {
+    "username": "groupomania_db",
+    "password": "DBgroupo321",
+    "database": "database_test",
+    "host": "localhost",
+    "port":8889,
+    "dialect": "mysql",
+    "logging": false
+  },
+  "production": {
+    "username": "groupomania_db",
+    "password": "DBgroupo321",
+    "database": "database_production",
+    "host": "localhost",
+    "port":8889,
+    "dialect": "mysql",
+    "logging": false
+  }
+}
