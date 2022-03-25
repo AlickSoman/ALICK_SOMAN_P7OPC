@@ -29,6 +29,7 @@
 <script>
 import axios from 'axios';
 import router from '../router'
+// import moment from 'moment'
 export default {
     name: 'ModifyPost',
     beforeCreate() {
@@ -57,6 +58,7 @@ export default {
         }
     },
     methods: {
+// 
         updateFile(event) {
             /* sur le onchange on va attribuer cette valeur à file (nécessaire pour l'envoi au backend) */ 
             this.newFile = this.$refs.file.files[0]

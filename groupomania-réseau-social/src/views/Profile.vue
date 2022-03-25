@@ -14,7 +14,7 @@
             <p>Prénom : <span>{{user.firstname}}</span></p>
             <p>Nom : <span>{{user.lastname}}</span></p>
             <p>Email : <span>{{user.email}}</span></p>
-            <p>Date d'inscription: <span>{{user.createdAt}}</span></p>
+            <p>Inscrit depuis le : <span>{{moment(user.createdAt)}}</span></p>
         </div>                             
     </div>
     <Edit v-if="editProfile" :user="user" @toggle-profile="toggleProfile" />
@@ -25,6 +25,7 @@
 import Nav from "../components/Nav.vue"
 import Header from "../components/Header.vue"
 import Edit from "../components/EditProfile.vue"
+import moment from 'moment'
 export default {
     name: 'Profile',
     components: {
@@ -55,6 +56,10 @@ export default {
         }
     },
     methods: {
+        // formatage de la date
+        moment(date) {
+            return moment(date).format('DD/MM/YYYY');
+        },
         /* fonction pour switcher entre afficher/modifier profil */
         toggleProfile() {
             this.showProfile = !this.showProfile

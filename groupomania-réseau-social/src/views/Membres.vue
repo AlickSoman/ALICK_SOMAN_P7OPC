@@ -17,7 +17,7 @@
             <div>                
                 <p>Nombre de post(s) : {{user.Posts.length}}</p>
                 <p>Likes reçus: {{getLikes(user.Posts)}}</p>
-                <p class="event">Dernier post le :<br> {{getDate(user.Posts)}}  </p>                    
+                <p class="event">Dernier post le :<br> {{moment(getDate(user.Posts))}}  </p>                    
             </div>           
         </div>            
     </div> 
@@ -26,6 +26,7 @@
 <script>
 import Nav from "../components/Nav.vue"
 import Header from "../components/Header.vue"
+import moment from 'moment'
 export default {
     name: 'Membres',
     components: {
@@ -40,6 +41,11 @@ export default {
         }
     },
     methods: {
+        // formatage de la date
+        moment(date) {
+            return moment(date).format('DD/MM/YYYY');
+        },
+        
         /* on récupère les users */
         async fetchUsers() {
             const res = await fetch('http://localhost:3000/api/users/all')
@@ -122,10 +128,9 @@ export default {
     object-fit: cover;
 }
 h4{
-    color:#4075C5;
+    color: #4075C5;
     font-weight: 800;
     text-transform: uppercase;
-
 }
 i{
     color: #4075C5;
@@ -137,7 +142,7 @@ p {
 #query {
     text-align: center;
     margin-bottom: 1.4% !important;
-    background: #4075C5;
+    background: #d05059;
     width: 100%;
 }
 input {

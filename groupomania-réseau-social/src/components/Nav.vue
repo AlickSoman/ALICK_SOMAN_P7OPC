@@ -1,5 +1,7 @@
 <template>
-    <div id="nav">        
+    
+    <div id="nav"> 
+            <!-- <div class="bondRoll"><img src="../assets/logos/Bitmap.svg" alt="baniere"> </div> -->
         <div id="logo">
             <router-link :to="redirection">
                 <div id="logoContainer">
@@ -51,7 +53,7 @@ export default {
     align-items: center;
     overflow: hidden;
     height: 100px;
-    background-color: #4075C5;
+    background-color: #d05059;
 }
 #logoContainer img{
     max-width: 200px;
@@ -61,6 +63,9 @@ export default {
     justify-content: flex-end;  
     width: 100%;  
 }
+/* .bondRoll{
+    height: 200px;
+} */
 .link {
     text-align: center;
     margin: 0 5px 0 5px;

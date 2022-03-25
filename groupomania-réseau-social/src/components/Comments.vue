@@ -205,6 +205,9 @@ button {
 .btn:active {
     transform: scale(0.98);
 }
+    .far{
+        color: #fd503a;
+    }
 i {
     margin-right: 3px;
 }
@@ -227,6 +230,7 @@ i {
         width: 100%;
         justify-content: space-between;
     }
+
     .commentText {
         background-color: rgba(0, 0, 0, 0.05);
         border-radius: 4px;

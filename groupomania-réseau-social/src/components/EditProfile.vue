@@ -114,21 +114,22 @@ export default {
             }
             /* on envoie notre requête */
             if (confirm("Modifier votre profil ?")) {
-                //console.log('edition en cours : ' + formData)
+                console.log('edition en cours : ' + formData)
                 axios.put(`http://localhost:3000/api/users/${localStorage.getItem('userId')}`, formData, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`
                     }
                 })
-                       .then(res => {
-                        console.log(res.data)
-                        router.push('/home')                                               
+                .then(res => {
+                console.log(res.data)
+                router.push({ path: '/home' })                                                
                     })
                     .catch(error => {error})
                    
-            } else {
-                location.reload()
-            }
+            } 
+            // else {
+            //     location.reload()
+            // }
         }
     }
 }

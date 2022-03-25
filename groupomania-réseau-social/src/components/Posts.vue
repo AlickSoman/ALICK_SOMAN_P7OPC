@@ -8,7 +8,7 @@
                 <div class="description">
                     <div>
                         <h4>{{ post.User.firstname }} {{ post.User.lastname }}</h4>
-                        <p>Le : {{ post.createdAt }}</p>
+                        <p>Le : {{moment(post.createdAt )}}</p>
                     </div>                 
                     <div v-if="auth(post.userId)" class="optionsBtn">
                         <button @click="modifyPost(post.id)"><i class="far fa-edit modify"></i>edit</button>
@@ -39,7 +39,7 @@
 import Comments from "../components/Comments.vue"
 import Likes from "../components/Likes.vue"
 import router from '../router'
-// import moment from 'moment'
+import moment from 'moment'
 export default {
     name: 'Posts',
     components: {
@@ -59,6 +59,11 @@ export default {
         }
     },
     methods: {
+
+        // formatage de la date
+        moment(date) {
+            return moment(date).format('DD/MM/YYYY');
+        },
         /* détermine le statut de l'user connecté par rapport à ce post */
         auth(postUserId) {
             if (this.isAdmin) {
@@ -156,6 +161,7 @@ export default {
     align-items: center;
 }
 .title {
+    color:#4075c5;
     vertical-align: center;
     margin: 0;
     padding: 1rem 0 0rem 1rem !important;
@@ -179,6 +185,9 @@ export default {
     border-radius: 50%;
     overflow: hidden;
 }
+.far{
+    color: #fd503a;
+}
 .profile {
     height: 100%;
     width: 100%;
@@ -191,7 +200,10 @@ export default {
     margin: 1.4rem 0 1.4rem 0;
 }
 .fileContainer {
+    max-width: 400px;
+    max-height: 400px;
     overflow: hidden;
+    object-fit: cover;
     text-align: center;
 }
 .file {

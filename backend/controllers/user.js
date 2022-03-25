@@ -16,7 +16,7 @@ exports.signup = (req, res) => {
             let { firstname, lastname, email, password } = user;
             User.create({firstname, lastname, email, password})
                 .then(newUser => {
-                    console.log("nouvel user enregistré:", newUser.firstname, newUser.lastname, "userId:", newUser.id);
+                    console.log("Nouvel user enregistré:", newUser.firstname, newUser.lastname, "userId:", newUser.id);
                     res.status(201).json()           
                 })
                 .catch(error => res.status(400).json(error))
@@ -55,8 +55,9 @@ exports.login = (req, res) => {
 
 /* logique pour update un user */
 exports.editUser = (req, res) => {  
+    console.log('editUser =========' +req.file.filename)
     req.file ? req.body.profile = req.file.filename : console.log("on garde la même photo"); // <- on vérifie si l'user a uploadé une nouvelle photo
-    console.log('edit du user : ' + req.body)
+   
     if (req.file) { // <- on supprime l'ancienne image de profil
         User.findOne({where: {id:req.params.id}})
             .then(user => {
