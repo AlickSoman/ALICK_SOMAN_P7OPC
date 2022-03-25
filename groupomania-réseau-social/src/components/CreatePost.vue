@@ -1,6 +1,9 @@
 <template>
     <div id="createPost">
         <form @submit.prevent="createPost">
+            <div id="text1">
+                <input class="title" name="input" placeholder="Titre" v-model="title">
+            </div>
             <div id="text">
                 <textarea name="textarea" placeholder="Publiez votre message" v-model="text"></textarea>
             </div>
@@ -22,6 +25,7 @@ export default {
     name: 'CreatePost',
     data() {
         return {
+            title: null,
             text: null,
             file: '',
             preview: null,
@@ -43,12 +47,13 @@ export default {
         },
         createPost() {
             /* on peut envoyer un post sans image mais il faut au moins qu'il y est un texte */     
-            if (!this.text) {
-                this.errMsg = "Error => Vous n'avez pas remplir le champ commentaire!"
+            if (!this.title) {
+                this.errMsg = "Error => Vous devez remplir le champ titre et commentaire!"
                 return
             }
             /* on créé un objet formData afin de pouvoir ajouter le texte et surtout le file choisi */
             let formData = new FormData()
+            formData.append('title', this.title)
             formData.append('text', this.text)
             formData.append('file', this.file)
             formData.append('userId', localStorage.getItem('userId'))
@@ -62,6 +67,7 @@ export default {
                 .catch(error => console.log(error))
             /* on emet le toggle-Create pour cacher ce composant tout en effaçant les inputs */
             this.$emit('toggle-Create')
+            this.title= ''
             this.text = ''
             this.file = ''
             this.preview = ''
@@ -84,6 +90,12 @@ form {
     display: flex;
     justify-content: space-around;
     flex-direction: column;
+}
+.title {
+    margin-bottom: 1rem;
+    padding: 0.4rem 0 0.5rem 1rem !important;
+     height: 1rem;
+    width: calc(100% - 1rem)
 }
 textarea {
     height: 5rem;

@@ -2,7 +2,11 @@
     <div id="modifyPost">
         <form @submit.prevent="modifyPost">
             <div id="text">
-                <label for="textarea">Changer votre texte</label>
+                <label for="textarea">Modifier le titre</label>
+            <input name="input" v-model="post.title">
+            </div> 
+            <div id="text">
+                <label for="textarea">Modifier le commentaire</label>
                 <textarea name="textarea" v-model="post.text"></textarea>
             </div>
             <div id="modify">
@@ -68,12 +72,13 @@ export default {
         },
         async modifyPost() {
             /* on peut envoyer un post sans image mais il faut au moins qu'il y est un texte */     
-            if (!this.post.text) {
+            if (!this.post.title) {
                 this.errMsg = "Error => vous devez remplir le champ <message> pour créer une nouvelle publication!"
                 return
             }
             /* on créé un objet formData afin de pouvoir ajouter le texte et surtout le file choisi */
             let formData = new FormData()
+            formData.append('title', this.post.title)
             formData.append('text', this.post.text)
             if (this.newFile) {
                 formData.append('file', this.newFile)

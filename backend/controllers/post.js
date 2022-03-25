@@ -38,10 +38,10 @@ exports.createPost = (req, res) => {
     };
     try {
         console.log(req.body);
-        let { text, file, userId } = req.body;
-        Post.create({text, file, userId})
+        let { title, text, file, userId } = req.body;
+        Post.create({title, text, file, userId})
             .then(newPost => {
-                console.log("nouveau post créé");
+                console.log("un nouveau post à été créé");
                 res.status(201).json(newPost);
             })
             .catch(error => res.status(400).json(error))

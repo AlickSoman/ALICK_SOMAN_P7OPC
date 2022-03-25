@@ -16,6 +16,7 @@
                     </div>
                 </div>                               
             </div>
+            <h2 class="title">{{ post.title }}</h2>
             <p class="text">{{ post.text }}</p>
             <div v-if="post.file" class="fileContainer">          
                 <img :src="'http://localhost:3000/images/' + post.file" :alt="post.file" class="file">
@@ -38,6 +39,7 @@
 import Comments from "../components/Comments.vue"
 import Likes from "../components/Likes.vue"
 import router from '../router'
+// import moment from 'moment'
 export default {
     name: 'Posts',
     components: {
@@ -145,12 +147,20 @@ export default {
     margin-top: 2rem;
     padding: 3rem;
     border-radius: 4px;
-    max-width: 350px;
+    width: 399px;
+    max-width: 450px;
 }
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.title {
+    vertical-align: center;
+    margin: 0;
+    padding: 1rem 0 0rem 1rem !important;
+    height: 1rem;
+    width: calc(90% - 1rem)
 }
 .description {
     display: flex;
