@@ -1,11 +1,11 @@
 # Projet OpenClassrooms: Groupomania
 
 Prérequis:
-
+Technologies :
     - Frontend: Vue.js
     - Backend: Node.js (avec Express.js)
-    - ORM: Sequelize (avec sequelize CLI)
-    - Database: MySQL
+    - ORM: Sequelize (avec sequelize CLI : Pour la connexion et la gestion/interaction de la base de données)
+    - Database: MySQL (Vous pouvez utiliser : MAMP-PHPmyAdmin ou MySQL WorkBench)Pour la mise en place de notre db relationnelle
 
 Installation process:
 
@@ -13,9 +13,9 @@ Installation process:
     - Ouvrir un terminal depuis la racine du projet
 
     - Pour le FRONTEND:
-        cd vue-frontend
+        cd groupomania-réseau-social
         npm install
-        npm run serve
+        npm run serve 
 
     - Pour le BACKEND:
         cd backend
@@ -27,8 +27,7 @@ Dans app.js =>
 // sequelize.sync({ force: false });
 // sequelize.sync({ alter: true }
 
-Installer nodemon = lancer le server avec npm run start
-       ou node server.js 
+Installer nodemon = lancer le server avec npm run start ou node server.js 
         
 
     - Ouvrir un navigateur: http://localhost:8081 (OU 8080)

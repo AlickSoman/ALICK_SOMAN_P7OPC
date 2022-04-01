@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "groupomania_db",
-    "password": "DBgroupo321",
+    "password": "@Cp[nGUzJNRoWiup",
     "database": "groupomania",
     "host": "localhost",
     "port":8889,
@@ -10,7 +10,7 @@
   },
   "test": {
     "username": "groupomania_db",
-    "password": "DBgroupo321",
+    "password": "@Cp[nGUzJNRoWiup",
     "database": "database_test",
     "host": "localhost",
     "port":8889,
@@ -19,7 +19,7 @@
   },
   "production": {
     "username": "groupomania_db",
-    "password": "DBgroupo321",
+    "password": "@Cp[nGUzJNRoWiup",
     "database": "database_production",
     "host": "localhost",
     "port":8889,
