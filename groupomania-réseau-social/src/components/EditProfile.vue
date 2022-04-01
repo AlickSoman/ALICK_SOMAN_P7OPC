@@ -197,11 +197,11 @@ button {
 .btn {
     margin-top: 1rem;
     color: white;
-    background: #1c69e6e7;
+    background: #002b5c;
 }
 .btn:hover {
     box-shadow: 2px 2px 8px 5px #1c69e665;
-    background: #1c68e6;
+    background: #1c69e665;
 }
 .btn:active {
     transform: scale(0.98);

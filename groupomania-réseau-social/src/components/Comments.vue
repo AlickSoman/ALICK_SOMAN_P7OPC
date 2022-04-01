@@ -1,8 +1,9 @@
 <template>
+<section>
     <!-- pour créer un nouveau commentaire -->
     <form @submit.prevent="createComment" v-show="!editComment">
         <input name="comment" placeholder="Publiez un commentaire" v-model="newComment" class="text">                           
-        <input type="submit" value="Je commente!" class="btn">
+        <input type="submit" value="Envoi!" class="btn">
     </form>
     <p>{{errMsg}}</p>
     <!-- montrer la section commentaire (s'il y a 1) -->
@@ -10,15 +11,15 @@
         <div :key="comment.id" v-for="comment in comments" class="comment">
             <div class="header">
                 <div class="profileContainer">
-                        <img :src="'http://localhost:3000/images/' + comment.User.profile" :alt="comment.User.profile" class="profile">>    
+                        <img :src="'http://localhost:3000/images/' + comment.User.profile" :alt="comment.User.profile" class="profile">   
                 </div>
                 <div class="commentUsername">
                     <h5>{{comment.User.firstname}} {{comment.User.lastname}}</h5>     
                 </div>
                 <div v-if="auth(comment.User.id)" class="optionsBtn">
-                    <button v-if="editComment != comment.id" @click="toggleComment(comment.id)"><i class="far fa-edit modify"></i>modifier</button>
+                    <button v-if="editComment != comment.id" @click="toggleComment(comment.id)"><i class="far fa-edit modify"></i>édit</button>
                     <button v-if="editComment == comment.id" @click="toggleComment(comment.id)"><i class="fas fa-arrow-left"></i>annuler</button>
-                    <button @click="deleteComment(comment.id)"><i class="far fa-trash-alt delete"></i>supprimer</button>    
+                    <button @click="deleteComment(comment.id)"><i class="far fa-trash-alt delete"></i></button>    
                 </div>               
             </div>                       
             <p v-show="!editComment" class="commentText">{{comment.text}}</p>
@@ -29,6 +30,7 @@
             </form>                          
         </div>        
     </div>
+    </section>
 </template>
 
 <script>
@@ -146,6 +148,12 @@ export default {
     justify-content: space-between;
     align-items: center;
 }
+h5{
+    color: #002b5c;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
 .commentUsername {
     display: flex;
     justify-content: space-between;
@@ -179,7 +187,7 @@ form {
 }
 input {
     margin-top: 1.8rem;
-    width: 100%;
+    width: 93%;
     padding: 10px;
     box-shadow: 2px 2px 8px 5px rgb(0 0 0 / 10%);
     border-style: none;
@@ -197,7 +205,7 @@ button {
     display: flex; 
 }
 .btn {
-    width: 30%;
+    width: 100%;
 }
 .btn:hover {
     box-shadow: 2px 2px 8px 5px #00000033;

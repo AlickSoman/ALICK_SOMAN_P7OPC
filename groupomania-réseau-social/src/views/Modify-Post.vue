@@ -1,7 +1,9 @@
 <template>
+<section>
     <Nav redirection="/home" :logged="true" />
     <Header :home="false" header="Modification du post" />
     <ModifyPost />
+</section>
 </template>
 
 <script>

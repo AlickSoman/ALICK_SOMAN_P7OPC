@@ -1,4 +1,5 @@
 <template>
+<section>
     <Nav redirection="/home" :logged="true" />  
     <Header :home="false" header="Membres" />
             <div id="query">
@@ -20,7 +21,8 @@
                 <p class="event">Dernier post le :<br> {{moment(getDate(user.Posts))}}  </p>                    
             </div>           
         </div>            
-    </div> 
+    </div>
+</section>
 </template>
 
 <script>
@@ -101,10 +103,10 @@ export default {
 .user {
     box-shadow: 2px 2px 9px 5px rgb(0 0 0 / 10%);
     padding: 1rem;
-    width: 300px;
+    width: 250px;
     /* height: auto; */
     margin: 0.5%;
-    margin-top:0.7%;
+    margin-top:5%;
     border-radius: 10px;
      
 }
@@ -128,12 +130,12 @@ export default {
     object-fit: cover;
 }
 h4{
-    color: #4075C5;
+    color: #002b5c;
     font-weight: 800;
     text-transform: uppercase;
 }
 i{
-    color: #4075C5;
+    color: #002b5c;
 }
 p {
     margin: 0.3rem;
@@ -142,11 +144,11 @@ p {
 #query {
     text-align: center;
     margin-bottom: 1.4% !important;
-    background: #d05059;
+    background: #d0505a;
     width: 100%;
 }
 input {
-    border: 1px solid #4075C5;
+    border: 1px solid #d0505a;
     border-radius: 0 10px 10px 0;
     border-left-style: none;
     padding: 7px;
@@ -156,16 +158,14 @@ input:focus {
     outline: none;
 }
 span {
-    border: 1px solid #4075C5;
+    border: 1px solid #d0505a;
     background: #ffffff;
     border-right-style: none;
     border-radius: 10px 0 0 10px;
     padding: 7px;
 }
 @media screen and (max-width: 992px) {
-    #usersContainer {
-        max-width: 100%;
-    }
+    
 }
 
 </style>

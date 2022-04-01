@@ -1,5 +1,7 @@
 <template>
-    <Nav redirection="/home" :logged="true" />
+   <section>
+    
+    <nav><Nav redirection="/home" :logged="true" /></nav>
     <Header :home="false" header="Profil" />
  
     <div v-if="showProfile" id="showProfile">
@@ -18,7 +20,7 @@
         </div>                             
     </div>
     <Edit v-if="editProfile" :user="user" @toggle-profile="toggleProfile" />
-
+</section> 
 </template>
 
 <script>
@@ -95,6 +97,7 @@ export default {
     border-radius: 50%;
     overflow: hidden;
 }
+
 button {
     background: transparent;
     border: none;
@@ -119,7 +122,8 @@ span {
 }
 @media screen and (max-width: 992px) {
     #showProfile {
-        max-width: 100%;
+        width: 70%;
+        height: 360px;
     }
 }
 </style>

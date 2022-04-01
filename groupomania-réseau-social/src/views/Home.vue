@@ -1,15 +1,19 @@
 <template>
-    <Nav redirection="/home" :logged="true" />
-    <Header :home="true" header="Accueil" />
+<section class="CenterContent">
+    <nav><Nav redirection="/home" :logged="true" /></nav>
+    <Header :home="true" header="Forum Groupomania" class="positionNav"/>
     <button v-if="createPost" @click="toggleCreate" class="btn">Retour au posts</button>
-    <button v-else @click="toggleCreate" class="btn">Décorer le mur !</button>    
+    <button v-else @click="toggleCreate" class="btn">Écrire un Post</button> 
+     <div id="ScrollTop"></div>
     <CreatePost v-show="createPost" @toggle-Create="toggleCreate" @add-Post="addPostFrontend" />
+
     <div v-if="!createPost" id="query">
         <span><i class="fas fa-search"></i></span>
         <input type="text" placeholder="Trouver un post" v-model="search">
     </div> 
     <Posts :posts="filterPosts" @delete-Post="deletePostFrontend" :isAdmin="isAdmin" :userId="userId"/>
-
+    <a class="toTop" href="#ScrollTop"><i class="fas fa-arrow-up"></i></a>
+</section>
 </template>
 
 <script>
@@ -77,14 +81,17 @@ export default {
 .btn {
     display: inline-block;
     color: white;
-    background: #1c68e6;
+    background: #002b5c;
     border: none;
     padding: 10px 48px;
     border-radius: 5px;
     text-decoration: none;
 }
+.positionNav h3{
+    padding: 40px;
+}
 .btn:hover {
-    box-shadow: 2px 2px 8px 5px #1c69e665;
+    box-shadow: 2px 2px 8px 5px #002b5c2c;
 }
 .btn:active {
     transform: scale(0.98);
@@ -95,28 +102,48 @@ export default {
 }
 #query {
     margin: 1rem 0 0 0;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
 }
 input {
     padding: 6px;
-    border: 1px solid #1c68e6;
+    border: 1px solid #002b5c;
     border-radius: 0 4px 4px 0;
     border-left-style: none;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
 }
 input:focus {
     outline: none;
 }
+.toTop{
+position: fixed;
+top: 85%; right: 5%;
+    background-color: #002b5c;
+    transition-delay: 2s ;
+    padding: 10px 0px 10px 15px;
+    border-radius: 50px;
+    width: 30px;
+    height: 30px;
+}
+.fa-arrow-up{
+    left: 15px;
+    color: white;
+}
 span {
     padding: 6px;
-    border: 1px solid #1c68e6;
+    border: 1px solid #002b5c;
     border-right-style: none;
     border-radius: 4px 0 0 4px;
 }
 @media screen and (max-width: 992px) {
     #query {
-        margin-left: 2rem;
+        margin: auto 2rem;
     }
     .btn {
-        margin-left: 2rem;
+        margin: 0.9rem 2rem;
     }
 }
 </style>

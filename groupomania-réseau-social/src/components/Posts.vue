@@ -12,19 +12,20 @@
                     </div>                 
                     <div v-if="auth(post.userId)" class="optionsBtn">
                         <button @click="modifyPost(post.id)"><i class="far fa-edit modify"></i>edit</button>
-                        <button @click="deletePost(post.id)"><i class="far fa-trash-alt delete"></i>supp</button>    
+                        <button @click="deletePost(post.id)"><i class="far fa-trash-alt delete"></i></button>    
                     </div>
                 </div>                               
             </div>
+            <div class="centerPost"></div>
             <h2 class="title">{{ post.title }}</h2>
-            <p class="text">{{ post.text }}</p>
             <div v-if="post.file" class="fileContainer">          
                 <img :src="'http://localhost:3000/images/' + post.file" :alt="post.file" class="file">
             </div>
+            <p class="description">{{ post.text }}</p>
             <div class="interaction">
                 <Likes :postId="post.id" :userId="userId" />
                 |
-                <button @click="toggleComments(post.id)" class="btn comments"><i class="far fa-comment"></i>Commentaires</button>
+                <button @click="toggleComments(post.id)" class="btn comments"><i class="far fa-comment"></i>Réagir !</button>
             </div>
             <Comments v-if="showComments == post.id" :comments="comments" :isAdmin="isAdmin" :userId="userId" :postId="post.id" 
                 @created="addComment" @deleted="deleteComment" @modified="modifyComment"/>             
@@ -150,28 +151,44 @@ export default {
     box-shadow: 2px 2px 8px 5px rgb(0 0 0 / 10%);
     margin: auto;
     margin-top: 2rem;
-    padding: 3rem;
+    padding: 1rem;
     border-radius: 4px;
-    width: 399px;
-    max-width: 450px;
+    width: 300px;
+    max-width: 400;
 }
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+.optionsBtn{
+    border-top: 1px solid red;
+    padding: 10px 0px 10px 0px;
+}
+.centerPost{
+    display: flex;
+    flex-direction: column;
+    padding: 0 auto 20px auto;
+    margin-bottom:20px ;
+}
+h4{
+    color: #002b5c;
+    font-weight: 800;
+    text-transform: uppercase;
+}
 .title {
-    color:#4075c5;
-    vertical-align: center;
+    color:#002b5c;
+    text-align: center;
     margin: 0;
-    padding: 1rem 0 0rem 1rem !important;
+    padding: 0 0 1rem 1rem !important;
     height: 1rem;
     width: calc(90% - 1rem)
 }
+.title::first-letter{
+    text-transform: capitalize;}
 .description {
-    display: flex;
-    justify-content: space-between;
-    vertical-align: center;
+    margin: 1.4rem 0 1.4rem 0;
+    text-align: center;
     width: 90%;
     padding-left: 16px;
     flex-wrap: wrap;
@@ -196,9 +213,7 @@ export default {
 .modify, .delete {
     margin: 0 0.2rem 0 1rem;
 }
-.text {
-    margin: 1.4rem 0 1.4rem 0;
-}
+
 .fileContainer {
     max-width: 400px;
     max-height: 400px;
@@ -237,6 +252,8 @@ i {
     }
     .post {
         margin: 2rem 0 0 0;
+        width: 230px;
+        max-width: 230;
     }
     .header {
         flex-direction: column;

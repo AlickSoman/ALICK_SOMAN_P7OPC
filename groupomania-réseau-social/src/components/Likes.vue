@@ -85,15 +85,15 @@ p {
 }
 .liked {
     color: white;
-    background-color: #3174e4;
-    border: 1px solid #3174e4;
+    background-color: #002b5c;
+    border: 1px solid #1c69e665;
     border-radius: 50%;
     padding: 0.5rem;
 }
 .like {
-    color: #3174e4;
+    color: #002b5c;
     background-color: white;
-    border: 1px solid #3174e4;
+    border: 1px solid #1c69e665;
     border-radius: 50%;
     padding: 0.5rem;
 }

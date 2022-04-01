@@ -1,5 +1,6 @@
 <template>
-    <Nav redirection="/login" :logged="false"/>
+<section>
+    <nav><Nav redirection="/login" :logged="false"/></nav>
     <div id="signupForm">
         <h3>Création de compte</h3>
         <form @submit.prevent="onSubmit">
@@ -12,6 +13,7 @@
         <h4>{{ errMsg }}</h4>
         <p>Vous avez déjà un compte ? Cliquez ici: <router-link to="/login">Login</router-link></p>
     </div>
+    </section>
 </template>
 
 <script>
@@ -126,7 +128,7 @@ export default {
     align-items: center;
 }
 h3 {
-   background-color: #4075C5;
+   background-color: #002b5c;
     background-size: cover;
     padding: 20px;
     border-radius: 10px;
@@ -152,7 +154,7 @@ input:hover {
 }
 .btn {
     color: white;
-    background-color:  #4075C5;
+    background-color:  #002b5c;
     margin: 2rem;
 }
 @media screen and (max-width: 992px) {

@@ -120,13 +120,18 @@ img {
     padding-top: 2rem;
 }
 .btn {
-    background-color: #1c68e6;
+    background-color: #002b5c;
     border-style: none;
     outline: none;
-    width: 20%;
+    padding: 10px 20px;
+    margin-top: 20px;
     border-radius: 8px;
-    height: 40px;
     color: white;
+}
+.btn:hover{
+    background-color: #086b42; 
+    box-shadow: #086b4271;
+
 }
 .upload:active {
   transform: scale(0.98);
@@ -138,5 +143,13 @@ p {
     #createPost {
         max-width: 90%;
     }
+    #btns {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+ 
+    padding-top: 2rem;
+}
 }
 </style>

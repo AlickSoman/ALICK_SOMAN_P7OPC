@@ -150,7 +150,7 @@ textarea {
     text-align: right;
 }
 .btn {
-    background-color: #1c68e6;
+    background-color: #002b5c;
     border-style: none;
     outline: none;
     width: 20%;

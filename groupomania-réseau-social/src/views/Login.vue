@@ -84,7 +84,7 @@ export default {
     align-items: center;
 }
 h3 {
-   background-color: #4075C5;
+   background-color: #002b5c;
     background-size: cover;
     padding: 20px;
     border-radius: 10px;
@@ -110,7 +110,7 @@ input:hover {
 }
 .btn {
     color: white;
-    background-color: rgb(3, 113, 177);
+    background-color: #002b5c;
     margin: 2rem;
 }
 @media screen and (max-width: 992px) {

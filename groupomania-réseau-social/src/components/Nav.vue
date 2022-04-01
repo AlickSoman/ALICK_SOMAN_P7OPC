@@ -18,7 +18,7 @@
         <div id="options" v-else>
             <router-link to="/profile" class="link"><i class="fas fa-user"></i>Profil</router-link>
             <router-link to="/membres" class="link"><i class="fas fa-users"></i>Membres</router-link>
-            <router-link to="/" @click="logout" class="link"><i class="fas fa-sign-out-alt"></i>Déconnexion</router-link>
+            <router-link to="/" @click="logout" class="link"><i class="fas fa-sign-out-alt"></i></router-link>
         </div>    
     </div>
 </template>
@@ -72,13 +72,14 @@ export default {
     border-radius: 10px;
     padding: 1rem;
     text-decoration: none;
-    background: #ececeb;
-    color: rgba(0, 0, 0, 0.75);
+    background: #002b5c;
+    color: rgba(255, 255, 255, 0.75);
 }
 .link:hover{
-    color: black;
+    color: rgb(255, 255, 255);
     box-sizing: content-box;
 }
+
 i {
     margin-right: 2px;
 }
@@ -91,7 +92,7 @@ i {
     text-align: center;
     margin: 0 5px 0 5px;
     border-radius: 10px;
-    padding: 0 0.9em 0 0.9em;
+    padding: 0.9 0.9em 0 0.9em;
     font-size: 15px;
 
 }

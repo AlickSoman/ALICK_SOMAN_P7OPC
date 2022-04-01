@@ -26,20 +26,29 @@ header {
     display: flex;
     justify-content: space-around;
 }
-.back {
-    padding: 3px 10px 3px 10px;
 
+.back {
     text-decoration: none;
-    color: black;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+#back {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    background-color: #002b5c;
+    padding: 10px 10px;
+    border-radius: 5px;
 }
 #back:hover {
-    border-radius: 20px;
-    background-color: #e09f9a9d;
-}
+ text-decoration: underline ;
+ color:#aa3131;
+ }
 #text {
     text-align: center;
-    background-color: #4075C5;
+    background-color: #002b5cb6;
     width: 140px;
+    padding: 10px 10px;
     border-radius: 5px;
 }
 h3{
@@ -53,5 +62,8 @@ p {
 }
 i {
     margin-right: 0.5rem;
+}
+i{
+    color: #ffffff;
 }
 </style>
